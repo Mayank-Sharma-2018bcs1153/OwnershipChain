@@ -7,7 +7,6 @@ class List extends Component{
     constructor(props){
         super(props);
         this.state={
-            loading: false,
             dataPeople:[],
             // username:'',
         };
@@ -66,11 +65,8 @@ class List extends Component{
             data={this.state.dataPeople}
             renderItem={this.itemComponent}
             keyExtractor={(item,index)=>index.toString()}
-            ItemSeparatorComponent={this.seperatorComponent}
-            refreshing={this.state.refreshing}
-            onRefresh={this.handleRefresh}/>
+            ItemSeparatorComponent={this.seperatorComponent}/>
         )
     }
 }
 export default List;
-export {imag};
