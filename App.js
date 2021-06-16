@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React ,{useEffect} from 'react';
 import {ScrollView,Animated,View,Image,Dimensions,Text} from 'react-native';
 import SignUpp from './components/signup3';
-import home from './components/home';
+import List from './components/home';
 import Login from './components/loginScreen1';
 import Loginsignup from './components/loginSignupScreen';
 import ImageDescription from './components/imageDes';
@@ -16,7 +16,7 @@ const addImg=({navigation})=>{
   return(
     <Stack.Navigator>
       <Stack.Screen name="Add image from gallery" component={ImageDescription}/>
-      <Stack.Screen name='Home' component={home}/>
+      <Stack.Screen name='Home' component={List}/>
     </Stack.Navigator>
   )
 
@@ -54,7 +54,7 @@ const mainDashboard=({navigation,route})=>{
   const Drawer=createDrawerNavigator();
 return(
   <Drawer.Navigator initialRouteName="Home">
-         <Drawer.Screen name="Home" component={home} options={{ title: 'my home' }}/>
+         <Drawer.Screen name="Home" component={List} options={{ title: 'my home' }}/>
          <Drawer.Screen name="Add image" component={addImg}/>
        </Drawer.Navigator>   
 )
