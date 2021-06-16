@@ -6,13 +6,9 @@ import home from './components/home';
 import Login from './components/loginScreen1';
 import Loginsignup from './components/loginSignupScreen';
 import ImageDescription from './components/imageDes';
-import Documentdes from './components/documentdes';
-import SettingScreen from './components/settingScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import ProfileScreen from './components/profileScreen';
-import { create } from 'react-test-renderer';
 
 const Signupp=({navigation})=>{return <SignUpp navigation={navigation}/>}
 const addImg=({navigation})=>{
@@ -25,38 +21,6 @@ const addImg=({navigation})=>{
   )
 
   }
-  const adddoc=({navigation})=>{
-    const Stack=createStackNavigator();
-    return(
-      <Stack.Navigator>
-        <Stack.Screen name="Add document from folder" component={Documentdes}/>
-        <Stack.Screen name='Home' component={home}/>
-      </Stack.Navigator>
-    )
-  
-    }
-const profile=()=>{return <ProfileScreen />}
-const settings=()=>{
-  const Stack=createStackNavigator();
-return (
-  <Stack.Navigator>
-  <Stack.Screen
-    name="Settings"
-    component={SettingScreen}
-    options={{
-      headerTintColor: 'white',
-      headerStyle: { backgroundColor: 'blue',opacity:0.4 },
-    }}
-  />
-  <Stack.Screen
-    name="Profile"
-    component={profile}
-    options={{ headerStyleInterpolator: forFade , headerStyle: { backgroundColor: 'blue',opacity:0.4 }}}
-  /> 
-</Stack.Navigator>
-)
-}
-
 const forFade = ({ current, next }) => {
   const opacity = Animated.add(
     current.progress,
@@ -92,8 +56,6 @@ return(
   <Drawer.Navigator initialRouteName="Home">
          <Drawer.Screen name="Home" component={home} options={{ title: 'my home' }}/>
          <Drawer.Screen name="Add image" component={addImg}/>
-         <Drawer.Screen name="Add document" component={adddoc}/>
-         <Drawer.Screen name="Settings" component={settings} />
        </Drawer.Navigator>   
 )
 }
