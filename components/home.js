@@ -14,6 +14,9 @@ class List extends Component{
     componentDidMount=()=>{
         this.fetchItem()
     }
+    componentDidUpdate=()=>{
+        this.fetchItem()
+    }
     getListViewItem=(item)=>{
         // Alert.alert(item.photo);
         imag=item.photo;
